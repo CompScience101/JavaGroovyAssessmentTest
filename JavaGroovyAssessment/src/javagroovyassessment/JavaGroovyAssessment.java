@@ -140,21 +140,21 @@ public class JavaGroovyAssessment {
             if(Integer.parseInt(category[x][1]) >= 100  ){
                 for(int y=0; y<margins.length; y++){
                     if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]);
+                        margin = Double.parseDouble(margins[y][1]) / 100;
                     }
                 }
             }
             else if(Integer.parseInt(category[x][1]) >= 75 && Integer.parseInt(category[x][2]) < 100  ){
                 for(int y=0; y<margins.length; y++){
                     if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]);
+                        margin = Double.parseDouble(margins[y][1]) / 100;
                     }
                 }
             }
             else if(Integer.parseInt(category[x][1]) >= 50 && Integer.parseInt(category[x][2]) < 75  ){
                 for(int y=0; y<margins.length; y++){
                     if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]);
+                        margin = Double.parseDouble(margins[y][1]) / 100;
                     }
                 }
             }
@@ -162,7 +162,7 @@ public class JavaGroovyAssessment {
             else if(Integer.parseInt(category[x][1]) >= 25 && Integer.parseInt(category[x][2]) < 50  ){
                 for(int y=0; y<margins.length; y++){
                     if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]);
+                        margin = Double.parseDouble(margins[y][1]) / 100;
                     }
                 }
             }
@@ -170,7 +170,7 @@ public class JavaGroovyAssessment {
             else if(Integer.parseInt(category[x][1]) >= 0 && Integer.parseInt(category[x][2]) < 25  ){
                 for(int y=0; y<margins.length; y++){
                     if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]);
+                        margin = Double.parseDouble(margins[y][1]) / 100;
                     }
                 }
             }
