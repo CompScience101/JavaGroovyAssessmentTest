@@ -136,45 +136,55 @@ public class JavaGroovyAssessment {
     }
     public static double MarginGen(double cost, String[][] category, String[][] margins){
         double margin=0;
-        for(int x=0; x<category.length; x++){
-            if(Integer.parseInt(category[x][1]) >= 100  ){
+        String categorySelection = "";
+            if(cost >= 100  ){
+                categorySelection = "C5";
                 for(int y=0; y<margins.length; y++){
-                    if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]) / 100;
+                    if(margins[y][0] == categorySelection){
+                        margin = Double.parseDouble(margins[y][1].replace("%", "")) / 100;
+                        System.out.println("margin: "+margin+" categorySelection "+categorySelection+", cost "+cost+", Integer.parseInt(category[x][1]) >= 100");//test
                     }
                 }
             }
-            else if(Integer.parseInt(category[x][1]) >= 75 && Integer.parseInt(category[x][2]) < 100  ){
+            else if(cost >= 75 && cost < 100  ){
+                categorySelection = "C4";
                 for(int y=0; y<margins.length; y++){
-                    if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]) / 100;
+                    if(margins[y][0] == categorySelection){
+                        margin = Double.parseDouble(margins[y][1].replace("%", "")) / 100;
+                        System.out.println("margin: "+margin+" categorySelection "+categorySelection+", cost "+cost+", Integer.parseInt(category[x][1]) >= 75 && Integer.parseInt(category[x][2]) < 100");//test
                     }
                 }
             }
-            else if(Integer.parseInt(category[x][1]) >= 50 && Integer.parseInt(category[x][2]) < 75  ){
+            else if(cost >= 50 && cost < 75  ){
+                categorySelection = "C3";
                 for(int y=0; y<margins.length; y++){
-                    if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]) / 100;
+                    if(margins[y][0] == categorySelection){
+                        margin = Double.parseDouble(margins[y][1].replace("%", "")) / 100;
+                        System.out.println("margin: "+margin+" categorySelection "+categorySelection+", cost "+cost+", ");//test
                     }
                 }
             }
             
-            else if(Integer.parseInt(category[x][1]) >= 25 && Integer.parseInt(category[x][2]) < 50  ){
+            else if(cost >= 25 && cost < 50  ){
+                categorySelection = "C2";
                 for(int y=0; y<margins.length; y++){
-                    if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]) / 100;
+                    if(margins[y][0] == categorySelection){
+                        margin = Double.parseDouble(margins[y][1].replace("%", "")) / 100;
+                        System.out.println("margin: "+margin+" categorySelection "+categorySelection+", cost "+cost+", Integer.parseInt(category[x][1]) >= 25 && Integer.parseInt(category[x][2]) < 50");//test
                     }
                 }
             }
             
-            else if(Integer.parseInt(category[x][1]) >= 0 && Integer.parseInt(category[x][2]) < 25  ){
+            else if(cost >= 0 && cost < 25  ){
+                categorySelection = "C1";
                 for(int y=0; y<margins.length; y++){
-                    if(margins[y][0] == category[x][0]){
-                        margin = Double.parseDouble(margins[y][1]) / 100;
+                    if(margins[y][0] == categorySelection){
+                        margin = Double.parseDouble(margins[y][1].replace("%", "")) / 100;
+                        System.out.println("margin: "+margin+" categorySelection "+categorySelection+", cost "+cost+", Integer.parseInt(category[x][1]) >= 0 && Integer.parseInt(category[x][2]) < 25");//test
                     }
                 }
             }
-        }
+
         return margin;
     }
     public static double AveragePriceGen(String GroupID, ArrayList<String[]> IndividualPriceList, int size){
