@@ -80,6 +80,8 @@ public class JavaGroovyAssessment {
         }
     }
     double G1total = 0;
+    double G2total = 0;
+    double G3total = 0;
     double cost = 0;
     double margin = 0;
     ArrayList<String[]> IndividualPriceList = new ArrayList<String[]>();
@@ -94,16 +96,16 @@ public class JavaGroovyAssessment {
                 //System.out.println("IndividualPriceList: "+IndividualPriceList.get(x)[0]);//add group id);
             }
             if(products[x][1].equalsIgnoreCase("G2")){
-                G1total = PriceGen(cost, MarginGen( cost , category, margins));
+                G2total = PriceGen(cost, MarginGen( cost , category, margins));
                 IndividualPriceList.add(new String[2]);
                 IndividualPriceList.get(x)[0] = "G2";//add group id
-                IndividualPriceList.get(x)[1] = ""+G1total;//add price 
+                IndividualPriceList.get(x)[1] = ""+G2total;//add price 
             }
             if(products[x][1].equalsIgnoreCase("G3")){
-                G1total = PriceGen(cost, MarginGen( cost , category, margins));
+                G3total = PriceGen(cost, MarginGen( cost , category, margins));
                 IndividualPriceList.add(new String[2]);
                 IndividualPriceList.get(x)[0] = "G3";//add group id
-                IndividualPriceList.get(x)[1] = ""+G1total;//add price 
+                IndividualPriceList.get(x)[1] = ""+G3total;//add price 
             }
         //}
     }
